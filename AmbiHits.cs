@@ -78,6 +78,7 @@ public class AmbiHits : Rotation
             Aimsharp.PrintMessage($"❌ Update check failed: {ex.Message}", Color.Red);
         }
     }
+CheckForUpdates();
 
     public override void Initialize()
     {

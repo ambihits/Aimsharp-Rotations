@@ -46,6 +46,38 @@ public class AmbiHits : Rotation
         Settings.Add(new Setting("Use Flame Shock", true));
         Settings.Add(new Setting("Use Feral Spirit", true));
     }
+    private void CheckForUpdates()
+    {
+        try
+        {
+            using (WebClient client = new WebClient())
+            {
+                string manifestRaw = client.DownloadString(manifestUrl);
+                string currentHash = "abc123"; // Replace this with your local hash if you want real comparisons
+
+                if (!manifestRaw.Contains(currentHash))
+                {
+                    Aimsharp.PrintMessage("🔄 Update available. Downloading latest AmbiHits.cs...", Color.Yellow);
+                    string latest = client.DownloadString(rotationUrl);
+                    File.WriteAllText(@"Rotations\AmbiHits.cs", latest);
+                    Aimsharp.PrintMessage("✅ AmbiHits.cs updated. Please /reload Aimsharp.", Color.Green);
+
+                    // Download updated .exe and .dll if needed
+                    client.DownloadFile(exeUrl, @"bin\Aimsharpwow.exe");
+                    client.DownloadFile(dllUrl, @"bin\Aimsharpwow.dll");
+                    Aimsharp.PrintMessage("✅ Aimsharpwow.exe and .dll updated.", Color.Green);
+                }
+                else
+                {
+                    Aimsharp.PrintMessage("✔️ AmbiHits is up to date.", Color.Gray);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Aimsharp.PrintMessage($"❌ Update check failed: {ex.Message}", Color.Red);
+        }
+    }
 
     public override void Initialize()
     {

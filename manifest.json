@@ -1,0 +1,8 @@
+{
+  "rotationVersion": "1.0.0",
+  "rotationHash": "abc123",
+  "aimsharpExeVersion": "2.5.1",
+  "aimsharpDllVersion": "2.5.1",
+  "aimsharpExeURL": "https://yourcdn.com/bin/Aimsharpwow.exe",
+  "aimsharpDllURL": "https://yourcdn.com/bin/Aimsharpwow.dll"
+}

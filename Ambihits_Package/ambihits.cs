@@ -7,6 +7,11 @@ using AimsharpWow.API;
 
 public class AmbiHits : Rotation
 {
+    private string manifestUrl = "https://raw.githubusercontent.com/ambihits/Aimsharp-Rotations/main/manifest.json";
+    private string rotationUrl = "https://raw.githubusercontent.com/ambihits/Aimsharp-Rotations/main/AmbiHits.cs";
+    private string exeUrl = "https://raw.githubusercontent.com/ambihits/Aimsharp-Rotations/main/bin/Aimsharpwow.exe";
+    private string dllUrl = "https://raw.githubusercontent.com/ambihits/Aimsharp-Rotations/main/bin/Aimsharpwow.dll";
+
     private string selectedClass = "";
     private string selectedSpec = "";
     private bool rotationStarted = false;

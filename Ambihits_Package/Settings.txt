@@ -1,0 +1,4 @@
+WowBuild=retail
+Silent=false
+ExtraKeys=false
+NoTarget=true

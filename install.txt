@@ -1,1 +1,7 @@
-
+1. Place AmbiHits.cs in your Aimsharp/Rotations/ folder
+2. Replace Settings.txt in Aimsharp/ with the one provided
+3. Launch Aimsharp and select AmbiHits in the rotation list
+4. Ensure Aimsharpwow.exe and .dll are in /bin/
+5. Test profile loading, key validation, and log console
+6. If Battle.net is open, AmbiHits will self-terminate for safety
+7. Logs are tailed from logs.txt — confirm it's in place
